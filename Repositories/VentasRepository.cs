@@ -1,4 +1,5 @@
 ﻿using Fruteria_Team.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,12 @@ namespace Fruteria_Team.Repositories
         {
             return context.Ventas.FirstOrDefault(x => x.Idventa == v.Idventa);
         }
-        public IEnumerable<Ventas> GetAll()
-        {
-            return context.Ventas.OrderBy(x => x.Idventa);
-        }
+      
+            public IEnumerable<Ventas> GetAll()
+            {
+                return context.Ventas.Include(x => x.CodVendedorNavigation).Include(x => x.CodProductoNavigation).OrderBy(x => x.Idventa);
+            }
+        
         public IEnumerable<Poblacion> GetP()
         {
             return context.Poblacion.OrderBy(x => x.Id);

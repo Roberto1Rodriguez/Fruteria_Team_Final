@@ -161,7 +161,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True" Header="ID" Width=".10*" Binding="{Binding IdProducto }"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Nombre" Width=".10*" Binding="{Binding NomProducto}"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="Grupo" Width=".15*" Binding="{Binding IdGrupo}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Grupo" Width=".15*" Binding="{Binding IdGrupoNavigation.NombreGrupo}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Precio" Width=".10*" Binding="{Binding Precio,StringFormat=C}"></DataGridTextColumn>
 
                 </DataGrid.Columns>

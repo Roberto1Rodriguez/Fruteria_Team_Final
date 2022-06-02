@@ -164,10 +164,10 @@
                     <DataGridTextColumn IsReadOnly="True" Header="Fecha de Nacimiento" Width=".21*" Binding="{Binding FechaNac,StringFormat={}{0:MM/dd/yyyy}}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Fecha de Alta" Width=".15*" Binding="{Binding FechaAlta,StringFormat={}{0:MM/dd/yyyy}}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Dirección" Width=".15*" Binding="{Binding Direccion}"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="Población" Width=".11*" Binding="{Binding Poblacion}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Población" Width=".11*" Binding="{Binding PoblacionNavigation.Nombre}" ></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Codigo Postal" Width=".15*" Binding="{Binding CodPostal}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Telefono" Width=".10*" Binding="{Binding Telefon}"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="Estado Civil" Width=".13*" Binding="{Binding EstalCivil}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Estado Civil" Width=".13*" Binding="{Binding EstalCivilNavigation.EstadoCivil1}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>

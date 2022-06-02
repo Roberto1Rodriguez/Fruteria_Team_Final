@@ -1,4 +1,5 @@
 ﻿using Fruteria_Team.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Fruteria_Team.Repositories
 
         public IEnumerable<Productos> GetAll()
         {
-            return context.Productos.OrderBy(x => x.IdProducto);
+            return context.Productos.Include(x => x.IdGrupoNavigation).OrderBy(x => x.NomProducto);
         }
      
 

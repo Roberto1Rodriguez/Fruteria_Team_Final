@@ -240,8 +240,8 @@
                 </DataGrid.Background>
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True" Header="ID" Width=".10*" Binding="{Binding Idventa}"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="CodVendedor" Width=".10*" Binding="{Binding CodVendedor}"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="CodProducto" Width=".15*" Binding="{Binding CodProducto}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Vendedor" Width=".10*" Binding="{Binding CodVendedorNavigation.NombreVendedor}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Producto" Width=".15*" Binding="{Binding CodProductoNavigation.NomProducto}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Fecha de Nacimiento" Width=".10*" Binding="{Binding Fecha,StringFormat={}{0:MM/dd/yyyy}}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Kilos" Width=".10*" Binding="{Binding Kilos}"></DataGridTextColumn>
                 </DataGrid.Columns>

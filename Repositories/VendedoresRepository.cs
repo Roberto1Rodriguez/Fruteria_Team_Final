@@ -1,4 +1,5 @@
 ﻿using Fruteria_Team.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Fruteria_Team.Repositories
 
         public IEnumerable<Vendedores> GetAll()
         {
-            return context.Vendedores.OrderBy(x => x.IdVendedor);
+            return context.Vendedores.Include(x => x.PoblacionNavigation).Include(x =>x.EstalCivilNavigation).OrderBy(x => x.NombreVendedor);
         }
         public Vendedores GetById(Vendedores v)
         {

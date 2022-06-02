@@ -1,4 +1,5 @@
 ﻿using Fruteria_Team.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Fruteria_Team.Repositories
 
         public IEnumerable<Comisiones> GetAll()
         {
-            return context.Comisiones.OrderBy(x => x.IdComision);
+            return context.Comisiones.Include(x => x.IdvendedorNavigation).OrderBy(x => x.IdComision);
         }
     }
 }

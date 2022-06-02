@@ -100,7 +100,7 @@
                 </DataGrid.Background>
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True" Header="ID" Width=".10*" Binding="{Binding IdComision }"></DataGridTextColumn>
-                    <DataGridTextColumn IsReadOnly="True" Header="IdVendedor" Width=".10*" Binding="{Binding Idvendedor}"></DataGridTextColumn>
+                    <DataGridTextColumn IsReadOnly="True" Header="Vendedor" Width=".10*" Binding="{Binding IdvendedorNavigation.NombreVendedor}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Fecha" Width=".10*" Binding="{Binding Fecha,StringFormat={}{0:MM/dd/yyyy}}"></DataGridTextColumn>
                     <DataGridTextColumn IsReadOnly="True" Header="Comisión" Width=".10*" Binding="{Binding Comision}"></DataGridTextColumn>
                 </DataGrid.Columns>
