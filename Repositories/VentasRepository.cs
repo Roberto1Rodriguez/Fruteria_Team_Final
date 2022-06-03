@@ -46,28 +46,59 @@ namespace Fruteria_Team.Repositories
        
         public void Insert(Ventas v)
         {
-            context.Add(v);
-            context.SaveChanges();
+            var transaccion = context.Database.BeginTransaction();
+            try
+            {
+                context.Add(v);
+                context.SaveChanges();
+                transaccion.Commit();
+            }
+            catch(Exception)
+            {
+                transaccion.Rollback();
+            }
         }
         public void Update(Ventas v)
         {
-            Ventas ventas = context.Ventas.FirstOrDefault(x => x.Idventa == v.Idventa);
-            if (ventas != null)
+            var transaccion = context.Database.BeginTransaction();
+            try
             {
 
-                ventas.Idventa = v.Idventa;
-                ventas.Kilos = v.Kilos;
-                ventas.Fecha = v.Fecha;
-                ventas.CodProducto = v.CodProducto;
+                Ventas ventas = context.Ventas.FirstOrDefault(x => x.Idventa == v.Idventa);
+                if (ventas != null)
+                {
+
+                    ventas.Idventa = v.Idventa;
+                    ventas.Kilos = v.Kilos;
+                    ventas.Fecha = v.Fecha;
+                    ventas.CodProducto = v.CodProducto;
                     ventas.CodVendedor = v.CodVendedor;
 
-                context.SaveChanges();
+                    context.SaveChanges();
+                    transaccion.Commit();
+                }
             }
-        }
+            catch (Exception)
+            {
+                transaccion.Rollback();
+            }
+            }
+        
         public void Delete(Ventas v)
         {
-            context.Remove(v);
-            context.SaveChanges();
+            var transaccion = context.Database.BeginTransaction();
+            try
+            {
+                context.Remove(v);
+                context.SaveChanges();
+                transaccion.Commit();
+            }
+            catch (Exception)
+            {
+
+                transaccion.Rollback();
+            }
+            
         }
         public bool Validate(Ventas v)
         {
