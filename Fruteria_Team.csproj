@@ -277,10 +277,38 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Informe.rdlc" />
     <Resource Include="Assets\Grithani.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\App.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Comisiones.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Estadocivil.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.fruteriaContext.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Grupos.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Poblacion.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Productos.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Vendedores.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Models.Ventas.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Repositories.ComisionesRepository.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Repositories.ProductosRepository.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Repositories.VendedoresRepository.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Repositories.VentasRepository.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.ViewModels.FruteriaViewModel.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.AgregarProducto.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.AgregarVendedor.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.AgregarVenta.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.ComisionesView.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.EditarProducto.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.EditarVendedor.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.EditarVenta.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.ProductosView.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.VendedoresView.datasource" />
+    <None Include="Properties\DataSources\Fruteria_Team.Views.VentasView.datasource" />
+    <None Include="Properties\DataSources\MainWindow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
