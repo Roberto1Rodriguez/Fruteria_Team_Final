@@ -104,7 +104,7 @@
                     </Setter>
 
                 </Style>
-              
+
                 <Style TargetType="Button" x:Key="Ventas">
                     <Setter Property="Width" Value="60"></Setter>
                     <Setter Property="Height" Value="60"></Setter>
@@ -131,8 +131,34 @@
                     </Setter>
 
                 </Style>
-               
-             
+                <Style TargetType="Button" x:Key="Imprimir">
+                    <Setter Property="Width" Value="60"></Setter>
+                    <Setter Property="Height" Value="60"></Setter>
+                    <Setter Property="Margin" Value="25,8"></Setter>
+                    <Setter Property="Foreground" Value="white"></Setter>
+                    <Setter Property="FontSize" Value="30"></Setter>
+                    <Setter Property="Cursor" Value="Hand"></Setter>
+                    <Setter Property="Background" Value="#B47851"></Setter>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" 
+                        Background="Gray" BorderBrush="White" 
+                        BorderThickness="4">
+                                    <ContentPresenter x:Name="contentPresenter" 
+                                      Content="I" 
+                                      HorizontalAlignment="Center"
+                                      Margin="0,0,0,5" 
+                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                </Style>
+
+
 
             </DockPanel.Resources>
 
@@ -140,10 +166,11 @@
 
             <StackPanel DockPanel.Dock="Right"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Margin="0,105,0,105.4" Width="109">
+                    HorizontalAlignment="Center" Margin="0,67,0,10.4" Width="109" Height="361">
                 <Button Style="{StaticResource agregar}" Command="{Binding  verAgregarVentaCommand}"></Button>
                 <Button Style="{StaticResource editar}" Command="{Binding  verEditarVendedorCommand}" CommandParameter="{Binding ElementName=dtgVendedores,Path=SelectedItem}"></Button>
                 <Button Style="{StaticResource Ventas}" IsCancel="True"></Button>
+                <Button Style="{StaticResource Imprimir}" Command="{Binding ImprimirReporteCommand}"></Button>
 
             </StackPanel>
 

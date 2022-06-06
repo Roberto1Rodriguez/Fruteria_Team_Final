@@ -2,10 +2,13 @@
 using Fruteria_Team.Repositories;
 using Fruteria_Team.Views;
 using GalaSoft.MvvmLight.Command;
+using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,7 +103,8 @@ namespace Fruteria_Team.ViewModels
         public ICommand EditarProductosCommand { get; set; }
         public ICommand CancelarCommand { get; set; }
         public ICommand EliminarCommand { get; set; }
-     
+        public ICommand ImprimirReporteCommand { get; set; }
+
 
         private Ventas ventas;
          public Ventas Ventas
@@ -465,6 +469,25 @@ namespace Fruteria_Team.ViewModels
             }
            
         }
+        private void ImprimirDatos()
+        {
+            Vend = reposV.GetAll().ToList();
+            ReportViewer viewer = new ReportViewer();
+            viewer.ProcessingMode = ProcessingMode.Local;
+            viewer.LocalReport.ReportPath = "Views/Informe.rdlc";
+            viewer.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", Vend));
+            Warning[] warnings = null;
+            string[] streamIds = null;
+            string mimeType = string.Empty;
+            string enconding = string.Empty;
+            string extension = string.Empty;
+            string filetype = string.Empty;
+            byte[] bytes = viewer.LocalReport.Render("PDF", null, out mimeType, out enconding, out extension, out streamIds, out warnings);
+            FileStream fs = new FileStream("ListaVendedores.pdf", FileMode.OpenOrCreate);
+            fs.Write(bytes, 0, bytes.Length);
+            fs.Close();
+            Process.Start(new ProcessStartInfo(fs.Name) { UseShellExecute = true });
+        }
         public FruteriaViewModel()
         {
             ListaVentas = new ObservableCollection<Ventas>(repos.GetAll());
@@ -488,6 +511,7 @@ namespace Fruteria_Team.ViewModels
             EditarVendedorCommand = new RelayCommand(EditarVendedor);
             EditarProductosCommand = new RelayCommand(EditarProducto);
             CancelarCommand = new RelayCommand(Cancelar);
+            ImprimirReporteCommand = new RelayCommand(ImprimirDatos);
 
            
         }
